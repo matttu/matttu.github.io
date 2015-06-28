@@ -6,6 +6,10 @@ $(document).ready(function() {
 	$('div.content:first').show(); 
 	$('#project-one').show();
 
+	// includes
+	$("#piano-include").load("./piano/piano.html"); 
+	$("div#two").load("./includes/resume.html");
+
 	// nav options onclick
 	var clickables = $('ul#nav li a').add($('#head a')).add($('div#zero a')).add($('div#mobile-home a'));
 	clickables.click(function() {
@@ -64,6 +68,7 @@ $(document).ready(function() {
 	$('ul#project-tabs a[name="project-map"]').hover(mapResize);
 });
 
+/*
 // imageMapResize
 var originalMapHTML;
 var mapId;
@@ -100,4 +105,4 @@ function mapResize() {
 
 		currentMapAreas[i].coords = newCoords.join(',');
 	}
-}
+} */
