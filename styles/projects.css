@@ -1,0 +1,52 @@
+ul#project-tabs {
+	display: block;
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	width: 40%;
+}
+
+ul#project-tabs li {
+	padding-left: 10px;
+	display: block;
+	height: 100%;
+	margin-bottom: 10px;
+}
+
+ul#project-tabs li a {
+	padding: 5px 10px;
+	margin-left: -10px;
+	height: 100%;
+	width: 100%;
+}
+
+ul#project-tabs li span {
+	font-size: .8em;
+}
+
+ul#project-tabs li:first-child a:hover {
+	color: #FF4500;
+}
+
+ul#project-tabs li:nth-child(2) a:hover {
+	color: #00EED8;
+}
+
+ul#project-tabs li:nth-child(3) a:hover {
+	color: #FF8C00;
+}
+
+ul#project-tabs li.activeProj a {
+	background: #eee;
+}
+
+div.project-content {
+	position: absolute;
+	padding-right: 50px;
+	left: 250px; top: 50px;
+	display: none;
+}
+
+img#piano {
+	width: 100%;
+}

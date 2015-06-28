@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- SoundManager Flash configuration -->
+<!-- Sound IDs are referenced from JS -->
+
+<items baseHref="./piano/notes/" defaultVol="75">
+ 
+ <sound id="F" href="F.mp3" />
+ <sound id="Fsharp" href="Fsharp.mp3" />
+ <sound id="G" href="G.mp3" />
+ <sound id="Gsharp" href="Gsharp.mp3" />
+ <sound id="A" href="A.mp3" />
+ <sound id="Asharp" href="Asharp.mp3" />
+ <sound id="B" href="B.mp3" />
+ <sound id="C" href="C.mp3" />
+ <sound id="Csharp" href="Csharp.mp3" />
+ <sound id="D" href="D.mp3" />
+ <sound id="Dsharp" href="Dsharp.mp3" />
+ <sound id="E" href="E.mp3" />
+
+</items>

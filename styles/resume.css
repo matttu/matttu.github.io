@@ -1,0 +1,109 @@
+/*resume*/
+
+.blocks {
+	background: #fff;
+	padding: 0 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.blocks h2 {
+	line-height: 100%;
+}
+
+.company, .companyInfo {
+	margin-left: -50px;
+}	
+
+.courses{ 
+	display: block;
+}
+
+.dates { 
+	text-align: right;
+	font-family: arial;
+	font-weight: normal;
+	font-size: 12pt;
+	float: right;
+}
+
+.description{
+	color: #000000;
+	margin-top: 10px;
+	font-family: "arial";
+	font-size: 10pt;
+}
+
+.vcard {
+	margin: 0 auto;
+	position: relative;
+}
+
+#profExperience, #education, #experience, #interests, #references {
+	position: relative;
+}
+
+.int{
+	margin-top: 6pt;
+	margin-left: 1em;
+	list-style-type: none;		
+}
+
+.job{ display: block;
+	margin-top: 6pt;
+	margin-left: 1em;
+}
+
+.jobtitle {text-align: left;
+	color: #000000;
+	font-family: "arial";
+	font-style: italic;
+	font-size: 12pt;
+	display: block;
+}
+
+.location { 
+	text-align: left;
+	font-weight: normal;
+	display: inline;
+	font-size: 10pt;
+}
+
+.major{ 
+	display: inline;
+	width: 50%;
+	float: left;
+	border: 0px solid blue;
+	list-style-type: disc;
+}
+
+.MajorDegree{
+	display: block;
+	color: #000000;
+	font-size: 12pt;
+} 
+
+.minor { 
+	position: relative;
+	left: 10px;
+	margin-top: 0pt;
+	margin-left: 0em;
+	border: 0px solid green;
+	list-style-type: none;
+}
+
+.MinorDegree {display: block;
+	color: #000000;
+	font-size: 12pt;
+} 
+
+.school { 
+	display: block;
+	margin-top: 6pt;
+	margin-left: 1em;
+	list-style-type: none;
+}
+
+.subtitle {
+	position: relative;
+	right: 20px;
+}

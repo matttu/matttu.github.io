@@ -1,0 +1,118 @@
+/* Matt Usifer */
+
+html,body {
+	padding: 0 0;
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+html {
+	border-top: 5px solid #777;
+}
+
+*:focus {outline: none;}
+
+a:link, a:visited {
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #f45
+}
+
+h2 {
+	font-family:"Big Caslon", Arial;
+}
+
+h3 {
+	color: #333;
+}
+
+/* transitions */
+div.fill {
+	height: 2000px;
+	margin: 0px 0;
+}
+
+#zero-one {
+background-image: url('../pictures/stills-between/avocados.jpg');
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+}
+
+#one-two {
+background-image: url('../pictures/stills-between/avocados-reverse.jpg');
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+}
+
+#two-three {
+background-image: url('../pictures/stills-between/avocados.jpg');
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+}
+
+div.container {
+	border-top: 5px solid #000;
+}
+
+div.content {
+	position: relative;
+	background: #fff;
+	text-align: justify;
+	margin: 0px 0 0 200px;
+	padding: 40px 50px 100px 0px;
+	line-height: 150%;
+}
+
+div.content-min-height {
+	min-height: 700px;
+}
+
+/* nav */
+div#head {
+	background: rgba(255,255,255,0);
+	padding: 25px 50px 25px 25px;
+	margin: 0 25px 0 -25px;
+	text-align: right;
+	position: fixed;
+	top:0px; left:25px;
+	font-size: 2em;
+	width: 135px;
+	height: 30%;
+	z-index:100;
+}
+
+ul#nav {
+	padding: 0;
+	margin: 40px 0 0;
+	list-style-type: none;
+}
+
+ul#nav li {
+	font-weight: normal;
+	font-size: .5em;
+	list-style-type: none;
+	padding-top: 20px;
+}
+
+ul#nav li a:link, ul#nav li a:visited, div#head a:link, div#head a:visited {
+	font-variant: normal;
+	text-transform: lowercase;
+	text-decoration: none;
+	padding: 5px 0;
+	font-weight: normal;
+}
+
+ul#nav li.activeNav {
+	font-weight: normal;
+	letter-spacing: 3px;	
+}
+
+div#mobile-home {
+	display:none;
+}

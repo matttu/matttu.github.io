@@ -1,0 +1,114 @@
+/* skydive effect */
+table.squares {
+	background: url('../pictures/home.jpg');
+	background-size: 100% 100%;
+	border-collapse:collapse;
+	width: 100%;
+	max-width: 700px;
+	margin-top: -10px;
+}
+
+table.squares td {
+	background: url('../pictures/home-bw.jpg');
+	background-size: 500%;
+}
+
+table.squares td:hover {
+	background: rgba(255,255,255,0);
+}
+
+td#b {
+	background-position: 25% 0;
+}
+
+td#c {
+	background-position: 50% 0;
+}
+
+td#d {
+	background-position: 75% 0;
+}
+
+td#e {
+	background-position: 100% 0;
+}
+
+td#f {
+	background-position: 0 25%;
+}
+
+td#g {
+	background-position: 25% 25%;
+}
+
+td#h {
+	background-position: 50% 25%;
+}
+
+td#i {
+	background-position: 75% 25%;
+}
+
+td#j {
+	background-position: 100% 25%;
+}
+
+td#k {
+	background-position: 0 50%;
+}
+
+td#l {
+	background-position: 25% 50%;
+}
+
+td#m {
+	background-position: 50% 50%;
+}
+
+td#n {
+	background-position: 75% 50%;
+}
+
+td#o {
+	background-position: 100% 50%;
+}
+
+td#p {
+	background-position: 0 75%;
+}
+
+td#q {
+	background-position: 25% 75%;
+}
+
+td#r {
+	background-position: 50% 75%;
+}
+
+td#s {
+	background-position: 75% 75%;
+}
+
+td#t {
+	background-position: 100% 75%;
+}
+
+td#u {
+	background-position: 0 100%;
+}
+
+td#v {
+	background-position: 25% 100%;
+}
+
+td#w {
+	background-position: 50% 100%;
+}
+
+td#x {
+	background-position: 75% 100%;
+}
+
+td#y {
+	background-position: 100% 100%;
+}
