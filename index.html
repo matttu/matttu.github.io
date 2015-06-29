@@ -36,69 +36,6 @@
 <script type="text/javascript" src="./scripts/jquery.scrollTo-1.4.3.1-min.js"></script>
 <script type="text/javascript" src="./scripts/mattusifer.js"></script>
 <script type="text/javascript" src="./scripts/img-map-resize.js"></script>
-<script type="text/javascript">
-
-		function C()
-		{
-		document.getElementById("piano").src="./piano/pictures/c.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function Csharp()
-		{
-		document.getElementById("piano").src="./piano/pictures/csharp.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function D()
-		{
-		document.getElementById("piano").src="./piano/pictures/d.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function Dsharp()
-		{
-		document.getElementById("piano").src="./piano/pictures/dsharp.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function E()
-		{
-		document.getElementById("piano").src="./piano/pictures/e.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function F()
-		{
-		document.getElementById("piano").src="./piano/pictures/f.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function Fsharp()
-		{
-		document.getElementById("piano").src="./piano/pictures/fsharp.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function G()
-		{
-		document.getElementById("piano").src="./piano/pictures/g.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function Gsharp()
-		{
-		document.getElementById("piano").src="./piano/pictures/gsharp.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function A()
-		{
-		document.getElementById("piano").src="./piano/pictures/a.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function Asharp()
-		{
-		document.getElementById("piano").src="./piano/pictures/asharp.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		function B()
-		{
-		document.getElementById("piano").src="./piano/pictures/b.jpg";
-		setTimeout('document.getElementById("piano").src="./piano/pictures/piano.jpg"',200);
-		}
-		</script>
 </head>
 
 <body>
@@ -121,6 +58,7 @@
 			<br><br><a href="#" title="#one" >Here</a> are a few things I do when I'm not at work.</p>
 	</div>
 	<div class="fill" id="zero-one"></div>
+<!-- home end -->
 
 <!-- projects -->
 	<div class="content" id="one">
@@ -137,12 +75,6 @@
 				<a href="http://friendsandfamilyvt.tumblr.com" target="_" name="project-ff">Friends + Family</a><br>
 				<span>CSS</span>
 			</li>
-			<!--
-			<li>
-				<a href="#" title="project-bandgen">Random Band Generator</a><br>
-				<span>Java</span>
-			</li>
-			-->
 			<li>
 				<a href="https://github.com/mattusifer/img-map-resize" target="_" name="project-map">Image Map Resize</a><br>
 				<span>jQuery</span>
@@ -170,6 +102,7 @@
 			<div id="piano-div">
 				Example: A poorly drawn, functional, and resizable piano.<br><br>
 
+				<!-- audio for piano -->
 				<audio id="C" src="./piano/notes/C.mp3" preload="auto"></audio>
 				<audio id="Csharp" src="./piano/notes/Csharp.mp3" preload="auto"></audio>
 				<audio id="D" src="./piano/notes/D.mp3" preload="auto"></audio>
@@ -183,6 +116,7 @@
 				<audio id="Asharp" src="./piano/notes/Asharp.mp3" preload="auto"></audio>
 				<audio id="B" src="./piano/notes/B.mp3" preload="auto"></audio>
 
+				<!-- resizable image map -->
 				<map id="pianoMap" name="pianoMap">
 				<area shape="poly" alt="C" title="" href="#" coords="245,253,328,246,303,347,304,390,314,396,295,469,295,533,153,542,150,482,151,478" onmousedown="javascript:playNotes('C');C()" />
 				<area shape="poly" alt="C#" title="" href="#" coords="346,221,368,216,380,248,338,386,310,399,302,386,305,341" onmousedown="javascript:playNotes('Csharp');Csharp()" />
@@ -205,19 +139,23 @@
 	</div>
 	
 	<div class="fill" id="one-two"></div>
-	
-<!-- experience -->
+<!-- projects end-->
+
+<!-- resume will be included here on document load using jQuery
+	 kept out of the main index.html file because of it's size
+-->
 	<div class="content" id="two">
 	</div>
-	
 	<div class="fill" id="two-three"></div>
-	
+<!-- resume end -->
+
 <!-- contact -->
 	<div class="content" id="three">
 		<div id="contact-info">
 			<p>Email: mattusifer@gmail.com</p>
 		</div>
-
+		
+		<!-- skydive table -->
 		<table class="squares">
 		    <tr>
 		        <td id="a"></td>
@@ -256,8 +194,10 @@
 		    </tr>
 		</table>
 	</div>
+<!-- end projects -->
 </div> <!-- container -->
 
+<!-- footer will become visible when small.css is activated -->
 <div id="mobile-home"><a href="#" title="#zero" >(home)</a></div>
 </body>
 </html>
