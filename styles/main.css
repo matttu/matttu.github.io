@@ -1,5 +1,8 @@
 /* Matt Usifer */
 
+/* Global 
+#################
+*/
 html,body {
 	padding: 0 0;
 	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -30,38 +33,39 @@ h3 {
 }
 
 /* transitions */
-div.fill {
+aside.fill {
 	height: 2000px;
 	margin: 0px 0;
 }
 
-#zero-one {
+aside#zero-one {
 background-image: url('../pictures/stills-between/avocados.jpg');
 background-size: cover;
 background-attachment: fixed;
 background-repeat: no-repeat;
 }
 
-#one-two {
+aside#one-two {
 background-image: url('../pictures/stills-between/avocados-reverse.jpg');
 background-size: cover;
 background-attachment: fixed;
 background-repeat: no-repeat;
 }
 
-#two-three {
+aside#two-three {
 background-image: url('../pictures/stills-between/avocados.jpg');
 background-size: cover;
 background-attachment: fixed;
 background-repeat: no-repeat;
 }
 
-div.container {
+section.container {
 	border-top: 5px solid #000;
 }
 
-div.content {
+section.content {
 	position: relative;
+	display: block;
 	background: #fff;
 	text-align: justify;
 	margin: 0px 0 0 200px;
@@ -69,12 +73,12 @@ div.content {
 	line-height: 150%;
 }
 
-div.content-min-height {
+section.content-min-height {
 	min-height: 700px;
 }
 
 /* nav */
-div#head {
+header {
 	background: rgba(255,255,255,0);
 	padding: 25px 50px 25px 25px;
 	margin: 0 25px 0 -25px;
@@ -113,6 +117,408 @@ ul#nav li.activeNav {
 	letter-spacing: 3px;	
 }
 
-div#mobile-home {
+footer {
 	display:none;
+}
+
+/* End Global 
+#################
+*/
+
+/* Projects 
+#################
+*/
+ul#project-tabs {
+	display: block;
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	width: 40%;
+}
+
+ul#project-tabs li {
+	padding-left: 10px;
+	display: block;
+	height: 100%;
+	margin-bottom: 10px;
+}
+
+ul#project-tabs li a {
+	padding: 5px 10px;
+	margin-left: -10px;
+	height: 100%;
+	width: 100%;
+}
+
+ul#project-tabs li span {
+	font-size: .8em;
+}
+
+ul#project-tabs li:first-child a:hover {
+	color: #FF4500;
+}
+
+ul#project-tabs li:nth-child(2) a:hover {
+	color: #00EED8;
+}
+
+ul#project-tabs li:nth-child(3) a:hover {
+	color: #FF8C00;
+}
+
+ul#project-tabs li.activeProj a {
+	background: #eee;
+}
+
+div.project-content {
+	position: absolute;
+	padding-right: 50px;
+	left: 250px; top: 50px;
+	display: none;
+}
+
+img#piano {
+	width: 100%;
+}
+/* End Projects 
+#################
+*/
+
+/* Resume 
+#################
+*/
+.blocks {
+	background: #fff;
+	padding: 0 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.blocks h2 {
+	line-height: 100%;
+}
+
+.company, .companyInfo {
+	margin-left: -50px;
+}	
+
+.courses{ 
+	display: block;
+}
+
+.dates { 
+	text-align: right;
+	font-family: arial;
+	font-weight: normal;
+	font-size: 12pt;
+	float: right;
+}
+
+.description{
+	color: #000000;
+	margin-top: 10px;
+	font-family: "arial";
+	font-size: 10pt;
+}
+
+.vcard {
+	margin: 0 auto;
+	position: relative;
+}
+
+#profExperience, #education, #experience, #interests, #references {
+	position: relative;
+}
+
+.int{
+	margin-top: 6pt;
+	margin-left: 1em;
+	list-style-type: none;		
+}
+
+.job{ display: block;
+	margin-top: 6pt;
+	margin-left: 1em;
+}
+
+.jobtitle {text-align: left;
+	color: #000000;
+	font-family: "arial";
+	font-style: italic;
+	font-size: 12pt;
+	display: block;
+}
+
+.location { 
+	text-align: left;
+	font-weight: normal;
+	display: inline;
+	font-size: 10pt;
+}
+
+.major{ 
+	display: inline;
+	width: 50%;
+	float: left;
+	border: 0px solid blue;
+	list-style-type: disc;
+}
+
+.MajorDegree{
+	display: block;
+	color: #000000;
+	font-size: 12pt;
+} 
+
+.minor { 
+	position: relative;
+	left: 10px;
+	margin-top: 0pt;
+	margin-left: 0em;
+	border: 0px solid green;
+	list-style-type: none;
+}
+
+.MinorDegree {display: block;
+	color: #000000;
+	font-size: 12pt;
+} 
+
+.school { 
+	display: block;
+	margin-top: 6pt;
+	margin-left: 1em;
+	list-style-type: none;
+}
+
+.subtitle {
+	position: relative;
+	right: 20px;
+}
+/* End Resume
+#################
+*/
+
+/* Contact 
+#################
+*/
+div#contactinfo {
+	display: block;
+	float: right;
+	font-size: 10em;
+}
+
+/* skydive effect */
+table.squares {
+	background: url('../pictures/home.jpg');
+	background-size: 100% 100%;
+	border-collapse:collapse;
+	width: 100%;
+	max-width: 700px;
+	margin-top: -10px;
+}
+
+table.squares td {
+	background: url('../pictures/home-bw.jpg');
+	background-size: 500%;
+}
+
+table.squares td:hover {
+	background: rgba(255,255,255,0);
+}
+
+td#b {
+	background-position: 25% 0;
+}
+
+td#c {
+	background-position: 50% 0;
+}
+
+td#d {
+	background-position: 75% 0;
+}
+
+td#e {
+	background-position: 100% 0;
+}
+
+td#f {
+	background-position: 0 25%;
+}
+
+td#g {
+	background-position: 25% 25%;
+}
+
+td#h {
+	background-position: 50% 25%;
+}
+
+td#i {
+	background-position: 75% 25%;
+}
+
+td#j {
+	background-position: 100% 25%;
+}
+
+td#k {
+	background-position: 0 50%;
+}
+
+td#l {
+	background-position: 25% 50%;
+}
+
+td#m {
+	background-position: 50% 50%;
+}
+
+td#n {
+	background-position: 75% 50%;
+}
+
+td#o {
+	background-position: 100% 50%;
+}
+
+td#p {
+	background-position: 0 75%;
+}
+
+td#q {
+	background-position: 25% 75%;
+}
+
+td#r {
+	background-position: 50% 75%;
+}
+
+td#s {
+	background-position: 75% 75%;
+}
+
+td#t {
+	background-position: 100% 75%;
+}
+
+td#u {
+	background-position: 0 100%;
+}
+
+td#v {
+	background-position: 25% 100%;
+}
+
+td#w {
+	background-position: 50% 100%;
+}
+
+td#x {
+	background-position: 75% 100%;
+}
+
+td#y {
+	background-position: 100% 100%;
+}
+/* End Contact 
+#################
+*/
+
+/* Small */
+@media screen and (max-width: 700px) {
+	html {
+		border: none;
+	}
+
+	header {
+		font-size: 1em;
+		background: #FFF;
+		margin:0 0 10px 0;
+		padding: 0 20px ;
+		text-align: left;
+		top:0px; left:0px;
+		width: 100%;
+		max-width: 600px;
+		height: 50px;
+		border-bottom: 1px solid #777;
+	}
+
+	header a[title="#zero"] {
+		display: none;
+	}
+
+	section.content {
+		margin: 0 auto;
+		padding: 50px 25px 0 25px;
+	}
+
+	ul#nav {
+		display: block;
+		text-indent: none;
+		height: 50px;
+		width: 100%;
+		padding: 0 0 0px 0px;
+		margin: 0 auto;
+	}
+
+	ul#nav li {
+		font-size: 1.0em;
+		padding: 10px 0 20px;
+		display: inline-block;
+		text-align: center;
+		margin-bottom: 100px;
+		width: 30%;
+	}
+
+	div.project-content {
+		left: 275px;
+	}
+
+	footer {
+		font-size: .8em;
+		position:fixed;
+		bottom:0;left:0;
+		display:block;
+		width: 100%;
+		text-align: center;
+		background: #fff;
+		border: 1px solid #777;
+	}
+
+	footer a {
+		display:block;
+		width: 100%;
+		height: 100%;
+		padding: 5px 0 5px;
+	}
+}
+
+/* Tiny */
+@media screen and (max-width: 500px) {
+	section.content {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	div.project-content {
+		margin-left: -4000px;
+	}
+
+	ul#project-tabs {
+		width: 100%;
+	}
+
+	section#two {
+		font-size: .8em;
+	}
+
+	.dates {
+		font-size: 8pt;
+		margin-left: 10px;
+	}
+
+	.MajorDegree, .MinorDegree {
+		font-size: 8pt;
+	}
 }

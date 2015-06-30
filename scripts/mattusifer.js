@@ -4,17 +4,14 @@
 $(document).ready(function() {
 
 	// hide everything
-	$('div.content').add('div.fill').hide();
+	$('section.content').add('aside.fill').hide();
 
 	//show first content box and project
-	$('div.content:first').show(); 
-	$('#project-one').show();
-
-	// include resume
-	$("div#two").load("./includes/resume.html");
+	$('section.content:first').show(); 
+	$('div#project-one').show();
 
 	// nav options onclick
-	var clickables = $('ul#nav li a').add($('#head a')).add($('div#zero a')).add($('div#mobile-home a'));
+	var clickables = $('ul#nav li a').add($('header a')).add($('section#zero a')).add($('footer a'));
 	clickables.click(function() {
 		var activeTab = $(this).attr('title');
 
@@ -22,11 +19,11 @@ $(document).ready(function() {
 		if($('.activeNav a').attr('title') != activeTab) {
 
 			// stretch content to fill screen space
-			$('div.content').addClass('content-min-height');
+			$('section.content').addClass('content-min-height');
 			 
 			// get current position, show all tabs
 			var currentPosition = $(document).scrollTop();
-			$('div.content').add('div.fill').show();
+			$('section.content').add('aside.fill').show();
 			
 			// if we are already scrolled down
 			// set new active element
@@ -50,9 +47,9 @@ $(document).ready(function() {
 	        // reset scrolltop
 	        // allow content to shrink to natural height
 			setTimeout(function() {
-				$('div.content').not(activeTab).add('div.fill').hide();
+				$('section.content').not(activeTab).add('aside.fill').hide();
 				$(document).scrollTop(0);
-				$('div.content').removeClass('content-min-height');
+				$('section.content').removeClass('content-min-height');
 				}, 1050);
 
 			// scale the height of the skydive table
@@ -91,7 +88,7 @@ $(document).ready(function() {
 	}
 });
 
-// plays notes through audio channels
+// play notes through audio channels
 function playNotes(s) {
 	for (a=0;a<audiochannels.length;a++) {
 		thistime = new Date();
