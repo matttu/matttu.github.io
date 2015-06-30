@@ -1,6 +1,10 @@
 // Written by Matt Usifer -- 6/23/2015
 // Uses Ariel Flesler's jQuery.scrollTo plugin to simplify changing scroll position.
 
+var originalMapHTML;
+var imgMapId;
+var imgMapWidth = 1343
+
 $(document).ready(function() {
 
 	// hide everything
@@ -59,6 +63,27 @@ $(document).ready(function() {
 				},500);
 			}
 		}
+
+		// map-resize
+		// get image map id
+		imgMapId = $('img[name="map-resize"]').attr('usemap');
+
+		// set original map html to save the original coordinates
+		originalMapHTML = $('<map>').append($(imgMapId).clone()).html();
+
+		// set to trigger at the end of a window resize
+		$(window).resize(function() {
+
+			// resize skydive table
+			$('table.squares').attr('height',$('table.squares').width()*.625);
+
+			// resize piano
+		    if(this.resizeTO) clearTimeout(this.resizeTO);
+		    this.resizeTO = setTimeout(function() {
+		        $(this).trigger('resizeEnd');
+		    }, 500);
+		});
+		$(window).bind('resizeEnd', mapResize);
 	});
 
 	// show project content on hover
@@ -68,11 +93,6 @@ $(document).ready(function() {
 		$(this).parent().addClass('activeProj');
 		$('div.project-content').hide();
 		$('div#' + currentProj).show();
-	});
-
-	// set skydive table to resize
-	$(window).resize(function() {
-		$('table.squares').attr('height',$('table.squares').width()*.625);
 	});
 
 	// resize piano when the project content loads
@@ -99,6 +119,25 @@ function playNotes(s) {
 			audiochannels[a]['channel'].play();
 			break;
 		}
+	}
+}
+
+// function for map-resize
+function mapResize() {
+	var mapImg = $('img[name="map-resize"]');
+	var widthFactor = mapImg.width()/imgMapWidth;
+	var originalMapAreas = $(originalMapHTML).find('area');
+	var currentMapAreas = $(imgMapId + ' area');
+
+	// remap coords
+	for(var i =0; i<currentMapAreas.length; i++) {
+		var originalCoords = originalMapAreas[i].coords.split(',');
+		var newCoords = currentMapAreas[i].coords.split(',');
+		for(var j=0;j<newCoords.length;j++) {
+			newCoords[j] = originalCoords[j]*widthFactor;
+		}
+
+		currentMapAreas[i].coords = newCoords.join(',');
 	}
 }
 
