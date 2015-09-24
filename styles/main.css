@@ -32,6 +32,10 @@ h3 {
 	color: #333;
 }
 
+.hidden {
+	display: none;
+}
+
 /* transitions */
 aside.fill {
 	height: 2000px;
