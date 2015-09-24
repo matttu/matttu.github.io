@@ -113,7 +113,7 @@
         				attr('href',repo.html_url).
         				attr('name',repo.name);
 
-        			if (repo.language) $liCurrentTemplate.find('span').text('repo.language');
+        			if (repo.language) $liCurrentTemplate.find('span').text(repo.language);
 
         			$contentCurrentTemplate.text(repo.description).
         				attr('id',repo.name);
