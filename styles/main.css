@@ -32,10 +32,6 @@ h3 {
 	color: #333;
 }
 
-.hidden {
-	display: none;
-}
-
 /* transitions */
 aside.fill {
 	height: 2000px;
@@ -524,4 +520,8 @@ td#y {
 	.MajorDegree, .MinorDegree {
 		font-size: 8pt;
 	}
+}
+
+.hidden {
+	display: none;
 }
