@@ -85,7 +85,7 @@
 				<span></span>
 			</li>
 		</ul>
-		<div class="project-content hidden"></div>
+		<div class="project-content"></div>
 	</section>
 
 	<script type="text/javascript">
@@ -94,7 +94,7 @@
         		$mainContainer = $('#one'),
         		$liContainer = $('ul#project-tabs'),
         		$liTemplate = $('li.hidden'),
-        		$contentTemplate = $('div.hidden'),
+        		$contentTemplate = $('div.project-content'),
         		$liCurrentTemplate;
 
         	$.getJSON(url, function(data, textStatus) {
@@ -119,7 +119,7 @@
         				attr('id',repo.name);
 
         			$liContainer.append($liCurrentTemplate.removeClass('hidden'));
-        			$mainContainer.append($contentCurrentTemplate.removeClass('hidden'));
+        			$mainContainer.append($contentCurrentTemplate);
         		}
         	});
         })();

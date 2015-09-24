@@ -522,6 +522,6 @@ td#y {
 	}
 }
 
-.hidden {
+li.hidden {
 	display: none;
 }
