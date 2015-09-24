@@ -67,11 +67,14 @@
 <section id="container">
 <!-- home -->
 	<section class="content" id="zero">
-		<p style="opacity:0.8;">I live in Burlington, VT and I'm a developer at 
-			<a href="http://www.dealer.com" target="_blank">Dealer.com</a>. 
-			You can find me on <a href="https://github.com/mattusifer/" target="_blank">GitHub</a>.
-			
-		<br><br><a href="#" title="#one" >Here</a> are a few things I'm working on.</p>
+		<p style="opacity:0.8;">I live in Philadelphia, and I'm an analyst at 
+			<a href="http://www.rjmetrics.com" target="_blank">RJMetrics</a>. 
+
+			<br><br>I also write code in my spare time. 
+			<a href="#" title="#one" >Here</a> are a few things I'm working on.
+
+			<br><br>You can find me on 
+			<a href="https://github.com/mattusifer/" target="_blank">GitHub</a>.</p>
 	</section>
 
 	<aside class="fill" id="zero-one"></aside>
@@ -87,43 +90,6 @@
 		</ul>
 		<div class="project-content"></div>
 	</section>
-
-	<script type="text/javascript">
-        (function() {
-        	var url='https://api.github.com/users/mattusifer/repos',
-        		$mainContainer = $('#one'),
-        		$liContainer = $('ul#project-tabs'),
-        		$liTemplate = $('li.hidden'),
-        		$contentTemplate = $('div.project-content'),
-        		$liCurrentTemplate;
-
-        	$.getJSON(url, function(data, textStatus) {
-        		data.sort(function(a,b) {
-        			return (new Date(b.updated_at) < new Date(a.updated_at)) ? -1 : 1;
-        		});
-
-        		for (i=0; i<data.length; i++) {
-        			repo = data[i];
-        			$liCurrentTemplate = $liTemplate.clone();
-        			$contentCurrentTemplate = $contentTemplate.clone();
-
-        			if (repo.fork) continue;
-
-        			$liCurrentTemplate.find('a').text(repo.name).
-        				attr('href',repo.html_url).
-        				attr('name',repo.name);
-
-        			if (repo.language) $liCurrentTemplate.find('span').text(repo.language);
-
-        			$contentCurrentTemplate.text(repo.description).
-        				attr('id',repo.name);
-
-        			$liContainer.append($liCurrentTemplate.removeClass('hidden'));
-        			$mainContainer.append($contentCurrentTemplate);
-        		}
-        	});
-        })();
-	</script>
 	
 	<aside class="fill" id="one-two"></aside>
 <!-- projects end-->
@@ -192,5 +158,6 @@
 <footer><a href="#" title="#zero" >(home)</a></footer>
 
 <script type="text/javascript" src="./scripts/main.js"></script>
+</script>
 </body>
 </html>
