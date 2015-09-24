@@ -143,6 +143,10 @@ ul#project-tabs li {
 	margin-bottom: 10px;
 }
 
+ul#project-tabs li.hidden {
+	display: none;
+}
+
 ul#project-tabs li a {
 	padding: 5px 10px;
 	margin-left: -10px;
@@ -520,8 +524,4 @@ td#y {
 	.MajorDegree, .MinorDegree {
 		font-size: 8pt;
 	}
-}
-
-li.hidden {
-	display: none;
 }
