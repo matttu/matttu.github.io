@@ -5,11 +5,12 @@
 */
 html,body {
 	padding: 0 0;
+	margin: 0 0;
 	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
 html {
-	border-top: 5px solid #777;
+	border-top: 5px solid #777; 
 }
 
 *:focus {outline: none;}
@@ -59,14 +60,10 @@ background-attachment: fixed;
 background-repeat: no-repeat;
 }
 
-section.container {
-	border-top: 5px solid #000;
-}
-
 section.content {
 	position: relative;
 	display: block;
-	background: #fff;
+	background: #fff;    
 	text-align: justify;
 	margin: 0px 0 0 200px;
 	padding: 40px 50px 100px 0px;
@@ -152,22 +149,6 @@ ul#project-tabs li a {
 
 ul#project-tabs li span {
 	font-size: .8em;
-}
-
-ul#project-tabs li:first-child a:hover {
-	color: #FF4500;
-}
-
-ul#project-tabs li:nth-child(2) a:hover {
-	color: #00EED8;
-}
-
-ul#project-tabs li:nth-child(3) a:hover {
-	color: #FF8C00;
-}
-
-ul#project-tabs li.activeProj a {
-	background: #eee;
 }
 
 div.project-content {

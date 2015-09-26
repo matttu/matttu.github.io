@@ -1,10 +1,6 @@
 // Written by Matt Usifer -- 6/23/2015
 // Uses Ariel Flesler's jQuery.scrollTo plugin to simplify changing scroll position.
 
-var originalMapHTML;
-var imgMapId;
-var imgMapWidth = 1343;
-
 $(document).ready(function() {
 
   // hide everything
@@ -35,7 +31,7 @@ $(document).ready(function() {
       // reset document scrolltop to offset
       if ($('.activeNav').length) {
         var activeElement = $('.activeNav a').attr('title');
-        var scrollFrom = $(activeElement).offset().top + currentPosition-12;
+        var scrollFrom = $(activeElement).offset().top + currentPosition-5;
         $(document).scrollTop(scrollFrom);
       }
 
@@ -44,7 +40,7 @@ $(document).ready(function() {
       $('a[title='+activeTab+']').parent().addClass('activeNav');
           
       // scroll
-          $.scrollTo(activeTab, 1000, {easing:'swing', offset:-12});
+          $.scrollTo(activeTab, 1500, {easing:'easeInOutCubic', offset:-5});
           
           // after scroll is complete
           // hide everything except active tab
@@ -54,7 +50,7 @@ $(document).ready(function() {
         $('section.content').not(activeTab).add('aside.fill').hide();
         $(document).scrollTop(0);
         $('section.content').css('min-height', '');
-        }, 1050);
+        }, 1550);
 
       // scale the height of the skydive table
       if (activeTab =='#three') {
@@ -63,47 +59,55 @@ $(document).ready(function() {
         },500);
       }
     }
+
+    return false; // prevent page from jumping to top
   });
 
-  // get info from github API
+  // get info from github API and colors.json
   var url='https://api.github.com/users/mattusifer/repos',
-    $mainContainer = $('#one'),
-    $liContainer = $('ul#project-tabs'),
-    $liTemplate = $('li.hidden'),
-    $contentTemplate = $('div.project-content'),
-    $liCurrentTemplate;
+      colors='https://raw.githubusercontent.com/doda/github-language-colors/master/colors.json',
+      $mainContainer = $('#one'),
+      $liContainer = $('ul#project-tabs'),
+      $liTemplate = $('li.hidden'),
+      $contentTemplate = $('div.project-content'),
+      $liCurrentTemplate;
 
-  $.getJSON(url, function(data, textStatus) {
-    data.sort(function(a,b) {
-      return (new Date(b.updated_at) < new Date(a.updated_at)) ? -1 : 1;
+  $.getJSON(colors, function(colors) {
+    $.getJSON(url, function(data) {
+
+      // sort by last updated
+      data.sort(function(a,b) {
+        return (new Date(b.updated_at) < new Date(a.updated_at)) ? -1 : 1;
+      });
+
+      for (i=0; i<data.length; i++) {
+        repo = data[i];
+        $liCurrentTemplate = $liTemplate.clone();
+        $contentCurrentTemplate = $contentTemplate.clone();
+
+        // if (repo.fork) continue;
+
+        $liCurrentTemplate.find('a').text(repo.name).
+          attr('href',repo.html_url).
+          attr('name',repo.name).
+          attr('onmouseover','$(this).'
+              + 'attr(\'style\',\'color: '+colors[repo.language]+'\').'
+              + 'parent().siblings().find(\'a\').attr(\'style\',\'\')');
+
+        $liCurrentTemplate.find('span').text(repo.language);
+
+        $contentCurrentTemplate.text(repo.description).
+          attr('id',repo.name);
+
+        $liContainer.append($liCurrentTemplate.removeClass('hidden'));
+        $mainContainer.append($contentCurrentTemplate);
+      }
     });
-
-    for (i=0; i<data.length; i++) {
-      repo = data[i];
-      $liCurrentTemplate = $liTemplate.clone();
-      $contentCurrentTemplate = $contentTemplate.clone();
-
-      if (repo.fork) continue;
-
-      $liCurrentTemplate.find('a').text(repo.name).
-        attr('href',repo.html_url).
-        attr('name',repo.name);
-
-      if (repo.language) $liCurrentTemplate.find('span').text(repo.language);
-
-      $contentCurrentTemplate.text(repo.description).
-        attr('id',repo.name);
-
-      $liContainer.append($liCurrentTemplate.removeClass('hidden'));
-      $mainContainer.append($contentCurrentTemplate);
-    }
   });
 
   // show project content on hover
   $('ul#project-tabs').on("mouseenter","a",function() {
     var currentProj = $(this).attr('name');
-    $('.activeProj').removeClass('activeProj');
-    $(this).parent().addClass('activeProj');
     $('div.project-content').hide();
     $('div#' + currentProj).show();
   });
