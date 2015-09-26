@@ -73,10 +73,6 @@ section.content {
 	line-height: 150%;
 }
 
-section.content-min-height {
-	min-height: 700px;
-}
-
 /* nav */
 header {
 	background: rgba(255,255,255,0);

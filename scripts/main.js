@@ -21,13 +21,13 @@ $(document).ready(function() {
 
     // if the click is on an inactive tab
     if($('.activeNav a').attr('title') != activeTab) {
-
-      // stretch content to fill screen space
-      $('section.content').addClass('content-min-height');
        
       // get current position, show all tabs
       var currentPosition = $(document).scrollTop();
       $('section.content').add('aside.fill').show();
+
+      // stretch content to fill screen space
+      $('section.content').css('min-height', window.innerHeight);
       
       // if we are already scrolled down
       // set new active element
@@ -53,7 +53,7 @@ $(document).ready(function() {
       setTimeout(function() {
         $('section.content').not(activeTab).add('aside.fill').hide();
         $(document).scrollTop(0);
-        $('section.content').removeClass('content-min-height');
+        $('section.content').css('min-height', '');
         }, 1050);
 
       // scale the height of the skydive table
