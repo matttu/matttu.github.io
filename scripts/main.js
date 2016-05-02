@@ -11,7 +11,7 @@ $(document).ready(function() {
   $('div#project-one').show();
 
   // nav options onclick
-  var clickables = $('ul#nav li a').add($('header a')).add($('section#zero a')).add($('footer a'));
+  var clickables = $('a.click-scroll');
   clickables.click(function() {
     var activeTab = $(this).attr('title');
 
