@@ -61,7 +61,7 @@ $(document).ready(function() {
       }, 550);
 
       // scale the height of the skydive table
-      if (activeTab =='#three') {
+      if (activeTab =='#two') {
         setTimeout(function() { 
           $('table.squares').attr('height',$('table.squares').width() * 0.625);
         },500);
