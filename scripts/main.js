@@ -4,23 +4,29 @@
 $(document).ready(function() {
 
   // hide everything
-  $('section.content').add('aside.fill').hide();
+  $('section.content').hide();
 
-  //show first content box and project
+  // show first content box and project
   $('section.content:first').show();
   $('div#project-one').show();
 
   // nav options onclick
   var clickables = $('a.click-scroll');
   clickables.click(function() {
+
+    // if the link is disabled, do nothing
+    if ($(this).hasClass('disabled')) return;
+
     var activeTab = $(this).attr('title');
+
+    clickables.addClass('disabled');
 
     // if the click is on an inactive tab
     if($('.activeNav a').attr('title') != activeTab) {
-       
+
       // get current position, show all tabs
       var currentPosition = $(document).scrollTop();
-      $('section.content').add('aside.fill').show();
+      $('section.content').show();
 
       // stretch content to fill screen space
       $('section.content').css('min-height', window.innerHeight);
@@ -40,17 +46,19 @@ $(document).ready(function() {
       $('a[title='+activeTab+']').parent().addClass('activeNav');
           
       // scroll
-          $.scrollTo(activeTab, 1500, {easing:'easeInOutCubic', offset:-5});
+      $.scrollTo(activeTab, 500, {easing:'easeInOutCubic', offset:-5});
           
-          // after scroll is complete
-          // hide everything except active tab
-          // reset scrolltop
-          // allow content to shrink to natural height
+      // after scroll is complete
+      // hide everything except active tab
+      // reset scrolltop
+      // allow content to shrink to natural height
+      // re-enable clickables
       setTimeout(function() {
-        $('section.content').not(activeTab).add('aside.fill').hide();
+        $('section.content').not(activeTab).hide();
         $(document).scrollTop(0);
         $('section.content').css('min-height', '');
-        }, 1550);
+        clickables.removeClass('disabled');
+      }, 550);
 
       // scale the height of the skydive table
       if (activeTab =='#three') {

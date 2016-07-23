@@ -33,33 +33,6 @@ h3 {
 	color: #333;
 }
 
-/* transitions */
-aside.fill {
-	height: 2000px;
-	margin: 0px 0;
-}
-
-aside#zero-one {
-background-image: url('../pictures/stills-between/avocados.jpg');
-background-size: cover;
-background-attachment: fixed;
-background-repeat: no-repeat;
-}
-
-aside#one-two {
-background-image: url('../pictures/stills-between/avocados-reverse.jpg');
-background-size: cover;
-background-attachment: fixed;
-background-repeat: no-repeat;
-}
-
-aside#two-three {
-background-image: url('../pictures/stills-between/avocados.jpg');
-background-size: cover;
-background-attachment: fixed;
-background-repeat: no-repeat;
-}
-
 section.content {
 	position: relative;
 	display: block;
