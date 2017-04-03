@@ -93,7 +93,7 @@ $(document).ready(function() {
         $liCurrentTemplate = $liTemplate.clone();
         $contentCurrentTemplate = $contentTemplate.clone();
 
-        // if (repo.fork) continue;
+        if (repo.fork) continue;
 
         $liCurrentTemplate.find('a').text(repo.name).
           attr('href',repo.html_url).
