@@ -1,6 +1,4 @@
 // Written by Matt Usifer -- 6/23/2015
-// Uses Ariel Flesler's jQuery.scrollTo plugin to simplify changing scroll position.
-
 $(document).ready(function() {
 
   // hide everything
@@ -11,58 +9,30 @@ $(document).ready(function() {
   $('div#project-one').show();
 
   // nav options onclick
-  var clickables = $('a.click-scroll');
+  var clickables = $('a.section-navigation');
   clickables.click(function() {
-
-    // if the link is disabled, do nothing
-    if ($(this).hasClass('disabled')) return;
-
     var activeTab = $(this).attr('title');
-
-    clickables.addClass('disabled');
 
     // if the click is on an inactive tab
     if($('.activeNav a').attr('title') != activeTab) {
-
-      // get current position, show all tabs
-      var currentPosition = $(document).scrollTop();
-      $('section.content').show();
-
-      // stretch content to fill screen space
-      $('section.content').css('min-height', window.innerHeight);
-      
-      // if we are already scrolled down
       // set new active element
-      // get scroll offset
-      // reset document scrolltop to offset
       if ($('.activeNav').length) {
         var activeElement = $('.activeNav a').attr('title');
-        var scrollFrom = $(activeElement).offset().top + currentPosition-5;
-        $(document).scrollTop(scrollFrom);
       }
 
       // move .activeNav identifier to active tab
-      $('.activeNav').removeClass('activeNav'); 
+      $('.activeNav').removeClass('activeNav');
       $('a[title='+activeTab+']').parent().addClass('activeNav');
-          
-      // scroll
-      $.scrollTo(activeTab, 500, {easing:'easeInOutCubic', offset:-5});
-          
-      // after scroll is complete
-      // hide everything except active tab
-      // reset scrolltop
-      // allow content to shrink to natural height
-      // re-enable clickables
-      setTimeout(function() {
-        $('section.content').not(activeTab).hide();
-        $(document).scrollTop(0);
-        $('section.content').css('min-height', '');
-        clickables.removeClass('disabled');
-      }, 550);
+
+      // show active tab
+      $(activeTab).show();
+
+      // hide everything
+      $('section.content').not(activeTab).hide();
 
       // scale the height of the skydive table
       if (activeTab =='#two') {
-        setTimeout(function() { 
+        setTimeout(function() {
           $('table.squares').attr('height',$('table.squares').width() * 0.625);
         },500);
       }
@@ -97,7 +67,7 @@ $(document).ready(function() {
 
         $liCurrentTemplate.find('a').text(repo.name).
           attr('href',repo.html_url).
-          attr('name',repo.name).
+          attr('name',repo.name.split('.').join('_')).
           attr('onmouseover','$(this).'
               + 'attr(\'style\',\'color: '+colors[repo.language]+'\').'
               + 'parent().siblings().find(\'a\').attr(\'style\',\'\')');
@@ -105,7 +75,7 @@ $(document).ready(function() {
         $liCurrentTemplate.find('span').text(repo.language);
 
         $contentCurrentTemplate.text(repo.description).
-          attr('id',repo.name);
+          attr('id',repo.name.split('.').join('_'));
 
         $liContainer.append($liCurrentTemplate.removeClass('hidden'));
         $mainContainer.append($contentCurrentTemplate);
@@ -115,7 +85,7 @@ $(document).ready(function() {
 
   // show project content on hover
   $('ul#project-tabs').on("mouseenter","a",function() {
-    var currentProj = $(this).attr('name');
+    var currentProj = $(this).attr('name').split('.').join('_');
     $('div.project-content').hide();
     $('div#' + currentProj).show();
   });
