@@ -29,13 +29,6 @@ $(document).ready(function() {
 
       // hide everything
       $('section.content').not(activeTab).hide();
-
-      // scale the height of the skydive table
-      if (activeTab =='#two') {
-        setTimeout(function() {
-          $('table.squares').attr('height',$('table.squares').width() * 0.625);
-        },500);
-      }
     }
 
     return false; // prevent page from jumping to top
@@ -88,11 +81,5 @@ $(document).ready(function() {
     var currentProj = $(this).attr('name').split('.').join('_');
     $('div.project-content').hide();
     $('div#' + currentProj).show();
-  });
-
-  // set to trigger at the end of a window resize
-  $(window).resize(function() {
-    // resize skydive table
-    $('table.squares').attr('height',$('table.squares').width() * 0.625);
   });
 });
