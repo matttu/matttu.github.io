@@ -9,10 +9,6 @@ html,body {
         font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-html {
-        border-top: 5px solid #777;
-}
-
 *:focus {outline: none;}
 
 a:link, a:visited {
@@ -125,9 +121,9 @@ ul#project-tabs li span {
 }
 
 div.project-content {
-        position: absolute;
+        position: fixed;
         padding-right: 50px;
-        left: 250px; top: 50px;
+        left: 475px; top: 50px;
         display: none;
 }
 
